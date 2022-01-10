@@ -1,6 +1,9 @@
 
 #!/bin/bash
 
+#get root permission
+sudo -v
+
 #install zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -46,6 +49,18 @@ sudo apt-get install ruby-full
 
 #install colorls
 sudo gem install colorls
+
+#change default shell to zsh
+chsh -s /bin/zsh
+
+#install tmux
+sudo apt-get install tmux
+
+#copy .tmux.conf to home directory
+cp .tmux.conf ~/.tmux.conf
+
+#source .tmux.conf
+tmux source ~/.tmux.conf
 
 #source zshrc
 source ~/.zshrc
